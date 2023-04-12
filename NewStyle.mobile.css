@@ -209,8 +209,22 @@ table.po_outlineTable {
   width: 100%;
 }
 
-table.\31 00\% {
+table.\31 00\%, table.\31 00\% > * {
   width: 100%;
+}
+
+#form1 > table.po_outlineTable > tbody > tr > td > table > tbody > tr:nth-child(1) {
+  display: none;
+}
+
+.po_outlineTableTabCell td[colspan="3"] {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.po_outlineTableTabCell td[colspan="3"] input {
+  display: block;
 }
 
 div#msgArea {
@@ -396,12 +410,12 @@ td[width="703"] {
 .listTableData2 > tbody > * .menuButton {
   display: block;
 }
-
+  
 .style8 {
- display: flex;
- flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
-
+  
 /* Hisshuu toroku */
 #main table[height="65"] {
   width: 100%;
@@ -463,14 +477,6 @@ td[width="703"] {
     background-size: 60% !important;
     background-position: bottom 5px left -20px !important
   }
-  .po_outlineTableTabCell td[colspan="3"] {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .po_outlineTableTabCell td[colspan="3"] input {
-    width: auto;
-    flex: 1;
-  }
 }
 
 @media (max-width: 426px) {
@@ -482,7 +488,7 @@ td[width="703"] {
     display: none;
   }
   .po_maintable .leftArea {
-     width: 100%;
+      width: 100%;
   }
   .jikanwariStyle .listTableArea, .favoriteStyle .listTableArea {
     width: 100%;
