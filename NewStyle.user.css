@@ -274,6 +274,7 @@
     background: none !important;
   }
   
+  
   /* Dialogs */
   #subContents {
     width: 100%;
@@ -364,7 +365,7 @@
    display: flex;
    flex-wrap: wrap;
   }
-  
+    
   /* Hisshuu toroku */
   #main table[height="65"] {
     width: 100%;
@@ -374,7 +375,7 @@
     background-size: cover !important;
   }
 
-  /* Sitemap */
+  /* Sitemap etc... */
   #form1 > table.outline {
     width:  100%;
     overflow: visible;
@@ -388,6 +389,37 @@
     width: 100%;
     padding-top: 25px;
   }
+  
+  .outline #singleTableArea {
+    width: auto;
+  }
+
+  #form1 > table.outline > tbody > tr:nth-child(1) {
+    width: fit-content;
+    display: block;
+  }
+
+  #form1 > table.outline > tbody {
+    display: block;
+  }
+
+  .outline > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1), .outline > tbody:nth-child(1) > tr:nth-child(5) > td:nth-child(1) {
+    width: 0;
+  }
+
+  .outline .rightSpace {
+    display: none;
+  }
+
+  .outline > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > div:nth-child(1) {
+    position: relative;
+  }
+
+  .outline > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) {
+    display: block;
+    width: 100%;
+  }
+
   
   @media (max-width: 500px) {
     #header {
