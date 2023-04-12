@@ -37,6 +37,46 @@
   div#header {
     margin: 0px;
   }
+  
+  #account > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
+   background: linear-gradient(135deg, rgba(0,0,0,0) 48%, #126e02 48%);;
+  }
+
+  #account > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td {
+    background: #126e02;
+  }
+
+  a[onclick="return doHome(this, event);"]::before {
+    content: "ホーム |";
+    display: inline;
+    color: white;
+    background: #126e02;
+  }
+  a[onclick="return doHome(this, event);"] img {
+    display: none;
+  }
+  a[onclick="return doSiteMap(this, event);"]::before {
+    content: "| サイトマップ |";
+    display: inline;
+    color: white;
+    background: #126e02;
+  }
+  a[onclick="return doSiteMap(this, event);"] img {
+    display: none;
+  }
+  /* return doLogout(this, event); */
+  a[onclick="return doLogout(this, event);"]::before {
+    content: "| ログアウト　";
+    display: inline;
+    color: white;
+    background: #126e02;
+  }
+  a[onclick="return doLogout(this, event);"] img {
+    display: none;
+  }
+  a[onclick="return doSiteMap(this, event);"] img {
+    display: none;
+  }
 
   div#menubox {
     background: #ffffff;
