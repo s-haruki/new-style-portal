@@ -39,7 +39,13 @@
   }
   
   #account > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
-   background: linear-gradient(135deg, rgba(0,0,0,0) 48%, #126e02 48%);;
+    background: linear-gradient(135deg, rgba(0,0,0,0) 50%, #126e02 50%);
+    width: 19px;
+    height: 17px;
+  }
+  
+  #account > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
+    visibility: hidden;
   }
 
   #account > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td {
