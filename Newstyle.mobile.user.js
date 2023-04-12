@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        NewStyle for safari
+// @name        NewStyle for mobile safari
 // @namespace   https://gist.githubusercontent.com/suyo-haru/
 // @version     0.4
 // @description Change Style
@@ -10,10 +10,11 @@
 
 (function() {
     'use strict';
-    const linkEl = document.createElement("link");
-    linkEl.rel = "stylesheet";
-    linkEl.href = "https://raw.githubusercontent.com/s-haruki/new-style-portal/main/NewStyle.user.css";
-    linkEl.crossorigin = "anonymous";
+    let st = document.createElement("link");
+    st.rel = "stylesheet";
+    st.charset = "utf-8";
+    st.href = "https://s-haruki.github.io/new-style-portal/NewStyle.mobile.css";
+    document.head.appendChild(st);
     document.head.appendChild(linkEl);
     const metaEl = document.createElement("meta");
     metaEl.name = "viewport";
