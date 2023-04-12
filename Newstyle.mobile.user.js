@@ -13,6 +13,7 @@
     const linkEl = document.createElement("link");
     linkEl.rel = "stylesheet";
     linkEl.href = "https://raw.githubusercontent.com/s-haruki/new-style-portal/main/NewStyle.user.css";
+    linkEl.crossorigin = "anonymous";
     document.head.appendChild(linkEl);
     const metaEl = document.createElement("meta");
     metaEl.name = "viewport";
