@@ -12,7 +12,7 @@
     'use strict';
     const linkEl = document.createElement("link");
     linkEl.rel = "stylesheet";
-    linkEl.href = "https://github.com/s-haruki/new-style-portal/raw/main/NewStyle.user.css";
+    linkEl.href = "https://raw.githubusercontent.com/s-haruki/new-style-portal/main/NewStyle.user.css";
     document.head.appendChild(linkEl);
     const metaEl = document.createElement("meta");
     metaEl.name = "viewport";
