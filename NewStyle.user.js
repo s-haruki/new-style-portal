@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name        NewStyle
-// @namespace   https://gist.githubusercontent.com/suyo-haru/
+// @namespace   https://github.com/s-haruki/
 // @version     0.4
 // @description Change Style
-// @author      suyoharu
+// @author      s-haruki
 // @match       https://portal.onomichi-u.ac.jp/up/faces/up/*
 // @grant       none
 // ==/UserScript==
