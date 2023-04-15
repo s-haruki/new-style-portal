@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        NewStyle
 // @namespace   https://github.com/s-haruki/
-// @version     0.4
+// @version     0.5
 // @description Change Style
 // @author      s-haruki
 // @match       https://portal.onomichi-u.ac.jp/up/faces/up/*
