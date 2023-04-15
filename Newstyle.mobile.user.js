@@ -10,22 +10,22 @@
 
 (function() {
     'use strict';
-    let st = document.createElement("link");
-    st.rel = "stylesheet";
-    st.charset = "utf-8";
-    st.href = "https://s-haruki.github.io/new-style-portal/NewStyle.mobile.css";
-    document.head.appendChild(st);
-    document.head.appendChild(linkEl);
+    
+    /* viewport */
     const metaEl = document.createElement("meta");
     metaEl.name = "viewport";
     metaEl.content = "width=device-width,initial-scale=1";
     document.head.appendChild(metaEl);
+    
+    /* 掲示板の空欄を除去 */
     document.querySelectorAll(".informationStyle .title").forEach((child) => {
         if (!child.getElementsByClassName("outputLinkEx").length) {
             const id = child.getElementsByClassName("outputText")[0].id;
             document.getElementById(id).parentElement.className = "title empty";
         }
     });
+    
+    /* css読み込み時にスクロールがズレるのを戻す */
     window.onload = function () {
         window.scroll({
             top: 0,
