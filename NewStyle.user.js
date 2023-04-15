@@ -2,6 +2,7 @@
 // @name        NewStyle
 // @namespace   https://github.com/s-haruki/
 // @version     0.5
+// @updateURL   https://s-haruki.github.io/new-style-portal/NewStyle.user.js
 // @description Change Style
 // @author      s-haruki
 // @match       https://portal.onomichi-u.ac.jp/up/faces/up/*
