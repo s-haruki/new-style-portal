@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           NewStyle 
 @namespace      https://github.com/s-haruki/
-@version        0.0.7
+@version        0.0.8
 @updateURL      https://s-haruki.github.io/new-style-portal/NewStyle.user.css
 @description    A new userstyle
 @author         s-haruki
@@ -204,6 +204,11 @@
 
   div#menu2 {
     min-width: 8em;
+  }
+  
+  div#menu8 {
+    /* 必修登録 必要な時に戻す */
+    display: none;
   }
 
   div#menu1, div#menu7, div#menu8 {
