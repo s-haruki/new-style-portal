@@ -195,6 +195,11 @@ table[style="border\:0px solid blue"] {
   padding: 5px 0;
 }
 
+div#menu8 {
+  /* 必修登録 必要な時に戻す */
+  display: none;
+}
+
 div#menu4 {
   min-width: 10em;
 }
