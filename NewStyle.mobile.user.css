@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name        NewStyle for mobile safari
 @namespace   https://github.com/s-haruki/
-@version     0.8
+@version     0.8.1
 @updateURL   https://s-haruki.github.io/new-style-portal/NewStyle.mobile.user.css
 @description Change Style
 @author      s-haruki
@@ -235,6 +235,7 @@ table.\31 00\%, table.\31 00\% > * {
 .po_outlineTableTabCell td[colspan="3"] {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   width: 100%;
 }
 
