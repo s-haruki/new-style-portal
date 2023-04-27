@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        NewStyle for mobile safari
 // @namespace   https://github.com/s-haruki/
-// @version     0.5
+// @version     0.6
 // @updateURL   https://s-haruki.github.io/new-style-portal/NewStyle.mobile.user.js
 // @description Change Style
 // @author      s-haruki
@@ -27,11 +27,11 @@
     });
     
     /* css読み込み時にスクロールがズレるのを戻す */
-    window.onload = function () {
+    setTimeout(function () {
         window.scroll({
             top: 0,
             left: 0,
             behavior: "instant"
         });
-    };
+    }, 100);
 })();
