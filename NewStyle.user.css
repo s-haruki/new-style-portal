@@ -410,6 +410,18 @@
     width: 100%;
   }
   
+  #form1 > table.outline > tbody > tr > td:nth-child(2) {
+    width: 100%;
+  }
+
+  table.listTable > * > tr {
+    width: 100%;
+  }
+
+  .listTable {
+    width: 100%;
+  }
+  
   .listTableData2 > tbody {
     display: flex;
     flex-direction: row;
