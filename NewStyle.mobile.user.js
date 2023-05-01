@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name        NewStyle for mobile safari
 // @namespace   https://github.com/s-haruki/
-// @version     0.6
+// @version     0.7
 // @updateURL   https://s-haruki.github.io/new-style-portal/NewStyle.mobile.user.js
 // @description Change Style
 // @author      s-haruki
 // @match       https://portal.onomichi-u.ac.jp/up/faces/up/*
 // @grant       none
+// @run-at      document-start
 // ==/UserScript==
 
 (function() {
