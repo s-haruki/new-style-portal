@@ -171,7 +171,7 @@ table[style="border\:0px solid blue"] {
 }
 
 #menubox a.menuhead {
-  background: #f5f5f5;
+  background: #f5f5f5 !important;
   height: auto;
 }
 
@@ -253,7 +253,7 @@ div#msgArea {
 }
 
 #form1 > table.po_outlineTable > tbody > tr > td > table > tbody > tr:nth-child(3) {
-  background-color: #1d588f;
+  background-color: #1d588f !important;
 }
 
 form#form1 {
@@ -305,7 +305,7 @@ td[class*="Astyle"] {
 }
 
 .jikanwariStyle .gifHeader {
-  background: #6e6e6e;
+  background: #6e6e6e !important;
   border-radius: 12px 12px 0 0;
 }
 
@@ -316,11 +316,11 @@ td[class*="Astyle"] {
   border-left-style: solid;
   border-right-style: solid;
   border-width: 2px;
-  background: #ffffff;
+  background: #ffffff !important;
 }
 
 .favoriteStyle .gifheader {
-  background: #878a84;
+  background: #878a84 !important;
   border-radius: 12px 12px 0 0;
 }
 
@@ -335,7 +335,7 @@ table[id*="htmlTodayJikanTable"] {
   border-left-style: solid;
   border-right-style: solid;
   border-width: 2px;
-  background: #ffffff;
+  background: #ffffff !important;
 }
 
 .colPad .graphicImageEx {
