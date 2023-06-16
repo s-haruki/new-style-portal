@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        NewStyle
 // @namespace   https://github.com/s-haruki/
-// @version     0.6
+// @version     0.7
 // @updateURL   https://s-haruki.github.io/new-style-portal/NewStyle.user.js
 // @description Change Style
 // @author      s-haruki
@@ -19,7 +19,7 @@
     const styleEl = document.createElement("style");
     styleEl.textContent = `
 file-preview {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
