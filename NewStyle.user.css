@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           NewStyle 
 @namespace      https://github.com/s-haruki/
-@version        0.0.10
+@version        0.0.11
 @updateURL      https://s-haruki.github.io/new-style-portal/NewStyle.user.css
 @match          https://portal.onomichi-u.ac.jp/up/faces/up/*
 @description    A new userstyle
@@ -10,12 +10,19 @@
 @-moz-document url-prefix("https://portal.onomichi-u.ac.jp/up/faces/up/") {
     /* NewStyle */
     
+    /* デバッグ用 */
+    .__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *, .__web-inspector-hidebefore-shortcut__::before, .__web-inspector-hideafter-shortcut__::after {
+        display: none !important;
+    }
+    
     /* お知らせの一覧の一番上をピンクにする(動作確認を兼ねて) */
     #form1 > table.po_mainTable > tbody > tr > td:nth-child(4) > table > tbody > tr > td > div > table > tbody > tr > td > table > tbody > tr:first-child > td > div {
         filter: hue-rotate(100deg);
     }
     
     /* --- 全体(共通) --- */
+    
+    /*  win_gecko.css  */
     
     /*  font size 12px */
 
@@ -26,14 +33,34 @@
     /*  font size 10px */
 
     td,th,li, #account .middle span {
-        font-family: "�l�r �o�S�V�b�N", 'Arial';
+        font-family: 'Arial';
         font-size:12px;
     }
 
 
     textarea, input, select {
-        font-family: "�l�r �o�S�V�b�N", 'Arial';
+        font-family: 'Arial';
         font-size: 1em;
+    }
+    
+    /* table */
+    table {
+        border-spacing: 0;
+    }
+    
+    .listTableArea {
+        float: none;
+        margin-left: 0;
+    }
+    
+    /* テーブルのtbodyを無視する */
+    table > tbody {
+        display: contents;
+    }
+    
+    /* tdに入っているpaddingを消す */
+    td {
+        padding: 0;
     }
     
     
@@ -109,7 +136,6 @@
     /* ヘッダー全体 */
     #header\:form1 {
         font-size: 0;
-        margin-bottom: -6px;
         width: 100%;
     }
     
@@ -135,6 +161,7 @@
         flex-wrap: nowrap;
         align-items: flex-end;
         justify-content: flex-end;
+        width: 100%;
     }
     
     #account > table > tbody {
@@ -143,6 +170,20 @@
     
     #account > table > tbody > tr {
         display: block;
+        width: 100%;
+    }
+    
+    #account > table > tbody > tr > td {
+        display: contents;
+    }
+    
+    #account > table > tbody > tr > td table {
+        margin-left: auto;
+    }
+    
+    #account div.middle {
+        display: flex;
+        align-items: end;
     }
 
     #account div.middle > span {
@@ -150,7 +191,7 @@
         display: block;
         text-align: end;
         line-height: normal;
-        margin-top: 9px;
+        margin-bottom: 4px;
     }
     
     /* ヘッダーメニュー項目 */
@@ -193,6 +234,9 @@
         text-align: left;
         height: auto;
         padding: 5px 0;
+        box-sizing: border-box;
+        border-left: 1px solid #bbb;
+        border-right: 1px solid #bbb;
     }
 
     div#menu2 {
@@ -252,7 +296,7 @@
     }
     
     /* お知らせのアイコン(未読, 重要) */
-    informationStyle .read > img, .informationStyle .important > img {
+    .informationStyle .read > img, .informationStyle .important > img {
         visibility: hidden;
         display: inline-block;
     }
@@ -261,12 +305,24 @@
         position: absolute;
         content: "✉️";
         visibility: visible;
+        font-size: 1.5em;
     }
 
     .informationStyle .important:has(img)::before {
         position: absolute;
         content: "⚠️";
         visibility: visible;
+    }
+    
+    .informationStyle table table td > div > table:nth-child(3){
+        display: none;
+    }
+    
+    .informationStyle td[class*="Astyle"] {
+        background-repeat: repeat-x;
+        background-position: top;
+        background-size: auto 25px;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAAAzCAYAAAA5Fj4CAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHsIAAB7CAW7QdT4AAALCSURBVGhD7dbrS1NxGMDxncuu53jZcYqX8hJOzZUuaUWzkBJBQrIXdqFXQa+k/6D/oZf1IqJ39UYsrKR6UWCZFdpt5bIYaF7CHXWbbnPHs7OdzuT3piByj9uU8XzgcOD5HQb78jsXHYKhyHlHUDTNmEprG7nKhlajUFGrL7CV63lrGUUzDM3qTUklLqWui0cCYuqQQ+J8bOnnj5g4M6VEQ8ubP7JDchqO5Ypt1v3HTxfUtbRzFU1OS0X9QdpgNJPltMgh/1x4xvNmbfrTaND76vFGYGGaLOVE1sOZbNV24UBHr9XRcYavaXXTDM2QpYxa/+X7EvSOPAx8HRmKzHsndKqqkqWsyEo42mDmStu6L5W5z/XzVY2HyDhnpODirPj2/i3x3YPb8XDAT8YZldFwptKahnJ3X7/tcM9lvaWwmIx3jJqQ5WXPi0H/64GbYe2WJuOM2H447QlvbT7RU95+/mqx/UiXjqZz+tzcqujC98/+sYEbSx+e3E3K0joZg4H/JGspFMqOnr2S2mFGoaqOjHc9JboWEMeH7ixqu3A7L5S0wlEMqy+qd50qcXZdsDm7L0LfiLuCmkgGvaPDyx+f3dPeysOJjfUwWdmS/4ajWYOxyO7qFFo6+wTHyV6WKxTIUt5IKLIUmhp7GvQ8HwxMvnyUkCKrZOmf/gjHGC28dtvt4/Y0tfF7HS6uutnFV9pbKcZgIJfkP20npj6wI7PfxiNzk9rhnZBW5nxKdHWFXLGJcl4b8mnPd5Y1F5WwJo4nc/SXpLwRU2KhlWRckVVKValj199n9UMxX9HkjNKE4YAwHBCGA8JwQBgOCMMBYTggDAeE4YAwHBCGA8JwQBgOCMMBYTggDAeE4YAwHBCGA8JwQBgOCMMBYTggDAeE4YAwHBCGA8JwQBgOCMMBYTggDAeE4YAwHBCGA8JwQBgORKf7DYqc2SL6OTPAAAAAAElFTkSuQmCC);
     }
     
     /* お知らせのNEWアイコン*/
@@ -290,35 +346,73 @@
         float: none;
     }
     
+    /* タブ(ポータル) */
     table.po_outlineTable {
         width: 100%;
+        display: block;
     }
-
-    table.\31 00\%,
-    table.\31 00\% > * {
+    
+    table.po_outlineTable > tbody, table.po_outlineTable > tbody > tr {
+        display: contents;
+    }
+    
+    table.po_outlineTable td.po_outlineTableTabCell {
+        display: block;
         width: 100%;
+        height: auto;
+        padding: 0;
     }
-
-    #form1 > table.po_outlineTable > tbody > tr > td > table > tbody > tr:nth-child(1) {
+    
+    table.po_outlineTable td.po_outlineTableTabCell tr:nth-child(1) {
         display: none;
     }
-
-    .po_outlineTableTabCell td[colspan="3"] {
+    
+    table.po_outlineTable td.po_outlineTableTabCell tr:nth-child(2) {
+        display: flex;
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+    
+    table.po_outlineTable td.po_outlineTableTabCell tr:nth-child(2) > td {
+        display: block;
+    }
+    
+    table.po_outlineTable td.po_outlineTableTabCell tr:nth-child(2) > td:first-child {
+        display: inline;
+    }
+    
+    table.po_outlineTable td.po_outlineTableTabCell tr:nth-child(2) > td:nth-child(2) {
         display: flex;
         flex-wrap: wrap;
         width: 100%;
+        flex-direction: row;
+    }
+    
+    table.po_outlineTable td.po_outlineTableTabCell tr:nth-child(2) > td:nth-child(2) input {
+        display: block;
+    }
+    
+    table.po_outlineTable td.po_outlineTableTabCell tr:nth-child(2) > td:last-child {
+        display: none;
+    }
+    
+    table.po_outlineTable td.po_outlineTableTabCell tr:nth-child(3) {
+        display: block;
+        height: 4px;
     }
 
-    .po_outlineTableTabCell td[colspan="3"] input {
+    table.\31 00\% {
+        width: 100%;
         display: block;
     }
 
+    /* メッセージ表示 */
     div#msgArea {
         width: 90%;
         margin: auto;
     }
 
-    #form1 > table.po_outlineTable > tbody > tr > td > table > tbody > tr:nth-child(3) {
+    #form1 > table.po_outlineTable table tr:nth-child(3) {
         background-color: #1d588f !important;
     }
 
@@ -349,14 +443,15 @@
     table[width="694"] {
         width: 100%;
     }
-
-    td[class*="Astyle"] {
-        background-repeat: repeat-x;
-        background-position: top;
-        background-size: auto 25px;
-        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAAAzCAYAAAA5Fj4CAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHsIAAB7CAW7QdT4AAALCSURBVGhD7dbrS1NxGMDxncuu53jZcYqX8hJOzZUuaUWzkBJBQrIXdqFXQa+k/6D/oZf1IqJ39UYsrKR6UWCZFdpt5bIYaF7CHXWbbnPHs7OdzuT3piByj9uU8XzgcOD5HQb78jsXHYKhyHlHUDTNmEprG7nKhlajUFGrL7CV63lrGUUzDM3qTUklLqWui0cCYuqQQ+J8bOnnj5g4M6VEQ8ubP7JDchqO5Ypt1v3HTxfUtbRzFU1OS0X9QdpgNJPltMgh/1x4xvNmbfrTaND76vFGYGGaLOVE1sOZbNV24UBHr9XRcYavaXXTDM2QpYxa/+X7EvSOPAx8HRmKzHsndKqqkqWsyEo42mDmStu6L5W5z/XzVY2HyDhnpODirPj2/i3x3YPb8XDAT8YZldFwptKahnJ3X7/tcM9lvaWwmIx3jJqQ5WXPi0H/64GbYe2WJuOM2H447QlvbT7RU95+/mqx/UiXjqZz+tzcqujC98/+sYEbSx+e3E3K0joZg4H/JGspFMqOnr2S2mFGoaqOjHc9JboWEMeH7ixqu3A7L5S0wlEMqy+qd50qcXZdsDm7L0LfiLuCmkgGvaPDyx+f3dPeysOJjfUwWdmS/4ajWYOxyO7qFFo6+wTHyV6WKxTIUt5IKLIUmhp7GvQ8HwxMvnyUkCKrZOmf/gjHGC28dtvt4/Y0tfF7HS6uutnFV9pbKcZgIJfkP20npj6wI7PfxiNzk9rhnZBW5nxKdHWFXLGJcl4b8mnPd5Y1F5WwJo4nc/SXpLwRU2KhlWRckVVKValj199n9UMxX9HkjNKE4YAwHBCGA8JwQBgOCMMBYTggDAeE4YAwHBCGA8JwQBgOCMMBYTggDAeE4YAwHBCGA8JwQBgOCMMBYTggDAeE4YAwHBCGA8JwQBgOCMMBYTggDAeE4YAwHBCGA8JwQBgORKf7DYqc2SL6OTPAAAAAAElFTkSuQmCC);
+    
+    .po_mainTable .leftArea .po_leftAreaTable {
+        margin-top: 10px;
     }
 
+    .leftArea > table > tbody > tr:nth-child(1) {
+        display: none;
+    }
+    
     .listTableArea .lineLeft,
     .listtablearea .lineRight {
         display: none;
@@ -416,6 +511,20 @@
 
     .singleTable td {
         background: none !important;
+    }
+    
+    .favoriteStyle .linkName {
+        font-size: 0;
+    }
+    
+    .favoriteStyle .linkName::before {
+        font-size: 12px;
+        display: inline;
+        content: attr(title);
+    }
+    
+    .favoriteStyle .listtablearea table table table, .favoriteStyle .listTableArea > table tr:nth-child(1) > *, .favoriteStyle .listTableArea > table tr:nth-child(1) * {
+        width: 100%;
     }
 
     /* Dialogs */
@@ -556,6 +665,21 @@
     .outline .leftSpace {
         display: none;
     }
+    
+    .outline > tbody > tr:last-child > td:first-child, .outline > tbody > tr:last-child > td:last-child {display: none;}
+
+    .outline > tbody > tr:last-child > td {
+        display: block;
+        width: 100%;
+    }
+
+    .outline .inTableLine {
+        width: 100%;
+    }
+    
+    .outline .listTable {
+        width: 100%;
+    }
 
     .scroll {
         width: 100%;
@@ -566,8 +690,8 @@
         width: auto;
     }
 
-    #form1 > table.outline > tbody > tr:nth-child(1) {
-        width: fit-content;
+    #form1 > table.outline > tbody > tr {
+        width: 100%;
         display: block;
     }
 
@@ -624,7 +748,7 @@
             width: 100%;
         }
 
-        .leftArea > table > tbody > tr:nth-child(3) > td > div > div > table > tbody > tr:nth-child(2) > td > table {
+        .po_leftAreaTable > tr:nth-child(3) > td > div > div > table > tbody > tr:nth-child(2) > td > table {
             width: 100%;
         }
 
